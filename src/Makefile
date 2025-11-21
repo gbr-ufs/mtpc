@@ -1,6 +1,5 @@
 DOCUMENT = main
 
-
 all: $(DOCUMENT).pdf
 
 $(DOCUMENT).pdf: $(DOCUMENT).tex
