@@ -1,0 +1,106 @@
+% Classe.
+\documentclass[
+  %% Opções da classe memoir.
+  article, % Indica que é um artigo acadêmico
+  11pt,    % Tamanho da fonte
+  oneside, % Para impressão apenas no recto.
+  a4paper, % Tamanho do papel.
+  %% Opções da classe abntex2.
+  %%% Títulos de letra maiúscula.
+  chapter=TITLE,
+  section=TITLE,
+  subsection=TITLE,
+  subsubsection=TITLE,
+  %% Opções do pacote babel.
+  english,
+  brazilian
+]{abntex2}
+% Pacotes.
+\usepackage[T1]{fontenc} % Permite fontes com mais glifos (letras).
+\usepackage[utf8]{inputenc} % UTF-8.
+%% Fonte bonita que é usada até hoje.
+%% Veja: <https://tex.stackexchange.com/questions/147194/is-it-still-useful-to-load-the-lmodern-package>
+\usepackage{lmodern}
+\usepackage{amsmath, amsthm, amssymb, mathtools} % Coisas de matemática.
+\usepackage{microtype} % Personalização de justificação.
+\usepackage{indentfirst} % Indenta o primeiro parágrafo de cada seção.
+% Configuração ABNT.
+\usepackage[brazilian,hyperpageref]{backref} % Página com citações.
+\usepackage[alf]{abntex2cite} % Citações ABNT.
+\titulo{\uppercase{Inteligência Artificial na Universidade Federal de Sergipe: O Seu Uso Pode Comprometer o Aprendizado?}}
+\autor{
+  Alexis Cristian Pertile de Oliveira Filho \and
+  Bruno Danton Carneiro Silva \and
+  Dávisson Cavalcante Costa \and
+  Gabriel Ferreira Bernardo \and
+  Gabriel Santos de Souza \and
+  Wevellyn Victória da Silva Azevedo
+}
+\orientador{Marcos Venícius Santos}
+\instituicao{
+  Universidade Federal de Sergipe -- UFS}
+\local{São Cristóvão}
+\data{2025}
+\preambulo{Artigo científico apresentado à Universidade Federal de Sergipe como requisito de avaliação parcial da disciplina de Métodos e Técnicas de Pesquisa para Computação e, por conseguinte, a obtenção dos seus créditos.}
+% Configuração do PDF.
+\makeatletter
+\hypersetup{
+  pdftitle={\@title},
+  pdfauthor={\@author},
+  pdfsubject={\imprimirpreambulo},
+  pdfcreator={LaTeX with abnTeX2},
+  pdfkeywords={universidade federal de sergipe}{federal university of sergipe}{inteligencia artificial}{artificial intelligence}{educação}{education},
+  colorlinks=true,
+  linkcolor=blue,
+  citecolor=blue,
+  filecolor=magenta,
+  urlcolor=blue,
+  bookmarksdepth=4
+}
+\makeatother
+% Comandos
+\newcommand{\imprimircapaelogo}{
+  \begin{center}
+    \includegraphics[scale=0.2]{img/logo_ufs}
+  \end{center}
+  \imprimircapa
+}
+% Espaçamento.
+\setlrmarginsandblock{3cm}{3cm}{*}
+\setulmarginsandblock{3cm}{3cm}{*}
+\checkandfixthelayout
+\setlength{\parindent}{1.3cm}
+\setlength{\parskip}{0.2cm}
+\SingleSpacing
+% Documento.
+\makeindex % Compila o índice.
+\begin{document}
+
+\selectlanguage{brazilian}
+\frenchspacing % Espaçamento normal entre frases. O LaTeX usa o espaçamento arcaico de 2 espaços em vez de 1.
+
+\imprimircapaelogo
+
+\imprimirfolhaderosto
+
+\tableofcontents
+
+\newpage
+
+\textual
+
+\section{Introdução}
+
+O uso de novas tecnologias se faz presente na sociedade desde seus primórdios. Na contemporaneidade, ferramentas digitais têm se popularizado e se tornado cada vez mais presentes no dia a dia da população mundial \citeonline{cornelio_historia_2021}. Dentre elas, os mecanismos de inteligência artificial (IAs) têm se destacado pela sua multifuncionalidade e pelo seu poder de resposta e solução rápidas \citeonline{google_global_2025}. Sob esse viés, no âmbito acadêmico, surgem questionamentos sobre o futuro dos estudantes com e sem o auxílio da ferramenta. Alguns dos principais riscos relacionados ao uso inconsequente de LLMs são a dependência criativa e relacionada à tomada de decisões, que acima de tudo, limitam o desenvolvimento crítico dos universitários \citeonline{marrOs15Maiores2023}.
+
+Nesse sentido, se faz necessário o debate sobre a seguinte questão: O uso da inteligência artificial pode comprometer o aprendizado DE QUEM???? Bom, de acordo com um estudo da Microsoft \citeonline{leeImpactGenerativeAI2025}, o uso não só pode, mas já compromete o conhecimento. Por mais que o estudo comente sobre as opiniões de ``trabalhadores de conhecimento'' (\textit{viz.} programadores), essa visão ainda é de grande valor para a educação. Uma pesquisa do MIT \citeonline{kosmynaYourBrainChatGPT2025} também buscou a resposta, 54 adultos fizeram redações com IA, um mecanismo de busca ou apenas o cérebro. Foi observado que o desempenho do grupo que fez uso da ferramenta de IA foi o menor entre os três grupos, e quando trocaram de papeis com o grupo que só usava o cérebro, tiveram um desempenho pior e engajamento levemente melhor do que o grupo cérebro na primeira seção.
+
+Nesse cenário, o tema se mostra extremamente relevante, o que se deve à popularização de LLMs, como o ChatGPT e seu crescente uso no contexto acadêmico. É necessário compreender o impacto do uso indiscriminado dessas ferramentas no amadurecimento cognitivo dos estudantes universitários, a exemplo da capacidade de aprender, tomar decisões, e desenvolver o pensamento crítico. É de interesse da pesquisa, nesse sentido, investigar e dimensionar os efeitos do emprego excessivo de ferramentas de criação de texto em trabalhos acadêmicos, assim como apurar as futuras consequências relacionadas ao desenvolvimento disfuncional dos discentes, tais como a redução da criatividade, raciocínio lógico, memória, linguagem, atenção e capacidade de aprendizado.
+
+Portanto, a importância da pesquisa se estende, não apenas ao contexto educacional, mas também às consequências futuras no mercado de trabalho e na sociedade como um todo, uma vez que, os estudantes afetados, pela dependência tecnológica serão os novos cientistas e prestadores de serviços. Além disso, a análise do problema levanta questões cruciais: Quais ações devem ser tomadas para tratar a dependência de IAs e de que modo serão formados estudantes com a capacidade de pensar em meio a uma realidade tão automática? A solução não deve ser proibir o uso da tecnologia, mas sim a maneira como pode ser administrada, que consiste no uso consciente e equilibrado, assim, podem-se obter resultados significativos para a evolução da educação.
+
+Diante do exposto, a pesquisa tem como objetivo geral analisar e entender as consequências do uso indiscriminado das inteligências artificiais no âmbito acadêmico, além de propôr meios para integrar essas tecnologias na educação de forma saudável através de políticas educacionais, desde que não comprometam o desenvolvimento da criticidade e criatividade dos discentes. Outrossim, os objetivos específicos da pesquisa serão: identificar a frequência de uso dessas ferramentas por parte dos alunos, mapear os efeitos percebidos por professores na capacidade crítica e criativa dos estudantes, ademais, cabe observar em quais contextos essa tecnologia é utilizada de forma mais intensa e indiscriminada.
+
+\bibliography{bibliografia}
+
+\end{document}

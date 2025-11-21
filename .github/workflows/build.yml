@@ -1,0 +1,26 @@
+name: Build
+
+on:
+  push:
+    paths:
+      - 'src/main.tex'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+    - name: Install TeX Live
+      run: |
+        sudo apt update -y
+        sudo apt install make -y
+        sudo apt install texlive-full -y
+    - name: Compile LaTeX Docs
+      run: |
+        make
+    - name: Upload Artifact
+      uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4
+      with:
+        name: dist
+        path: dist/main.pdf

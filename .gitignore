@@ -1,0 +1,10 @@
+# Ignore all dotfiles, except those under version control.
+.*
+!.editorconfig
+!.envrc
+!.github/
+!.gitignore
+!.python-version
+
+# Ignore build directories.
+dist/
