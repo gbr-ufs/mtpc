@@ -25,8 +25,6 @@
 \usepackage{microtype} % Personalização de justificação.
 \usepackage{indentfirst} % Indenta o primeiro parágrafo de cada seção.
 % Configuração ABNT.
-\usepackage[brazilian,hyperpageref]{backref} % Página com citações.
-\usepackage[alf]{abntex2cite} % Citações ABNT.
 \titulo{\uppercase{Inteligência Artificial na Universidade Federal de Sergipe: Como o Seu Uso pode Comprometer o Aprendizado em Disciplinas Introdutórias de Programação}}
 \autor{
   Alexis Cristian Pertile de Oliveira Filho \and
@@ -42,6 +40,19 @@
 \local{São Cristóvão}
 \data{2025}
 \preambulo{Artigo científico apresentado à Universidade Federal de Sergipe como requisito de avaliação parcial da disciplina de Métodos e Técnicas de Pesquisa para Computação e, por conseguinte, a obtenção dos seus créditos.}
+% Configuração de citação.
+\usepackage[brazilian,hyperpageref]{backref} % Página com citações.
+\usepackage[alf]{abntex2cite} % Citações ABNT.
+\renewcommand{\backrefpagesname}{Citado na(s) página(s):~}
+\renewcommand{\backref}{}
+\renewcommand*{\backrefalt}[4]{
+	\ifcase #1 %
+		Nenhuma citação no texto.%
+	\or
+		Citado na página #2.%
+	\else
+		Citado #1 vezes nas páginas #2.%
+	\fi}%
 % Configuração do PDF.
 \makeatletter
 \hypersetup{
