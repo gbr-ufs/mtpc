@@ -3,6 +3,6 @@
 *
 !.gitignore
 !main.tex
-!bibliografia.pdf
+!bibliografia.bib
 !img/
 !Makefile
