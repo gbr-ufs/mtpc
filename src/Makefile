@@ -1,12 +1,16 @@
 DOCUMENT = main
 
-PHONY: $(DOCUMENT).pdf
 
 all: $(DOCUMENT).pdf
 
-$(DOCUMENT).pdf:
-	latexmk -pdf -pdflatex="pdflatex -interaction=nonstopmode" -use-make $(DOCUMENT).tex
+$(DOCUMENT).pdf: $(DOCUMENT).tex
+
+.PHONY: $(DOCUMENT).pdf
+
+$(DOCUMENT).tex:
+	latexmk -pdf -use-make -auxdir=build $@
+
+.PHONY: $(DOCUMENT).tex
 
 clean:
-	latexmk -CA
-	rm $(DOCUMENT).brf $(DOCUMENT).bbl
+	latexmk -CA -auxdir=build
