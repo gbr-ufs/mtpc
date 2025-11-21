@@ -4,7 +4,6 @@
 !.envrc
 !.github/
 !.gitignore
-!.python-version
 
 # Ignore build directories.
 dist/
