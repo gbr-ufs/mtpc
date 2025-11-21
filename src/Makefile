@@ -9,3 +9,4 @@ $(DOCUMENT).pdf:
 
 clean:
 	latexmk -CA
+	rm $(DOCUMENT).brf $(DOCUMENT).bbl
