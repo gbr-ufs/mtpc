@@ -1,0 +1,8 @@
+# Ignore all files except those under version control.
+# This is done because LaTeX outputs a lot of files after compilation.
+*
+!.gitignore
+!main.tex
+!bibliografia.pdf
+!img/
+!Makefile
