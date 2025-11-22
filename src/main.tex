@@ -1,24 +1,32 @@
 % Classe.
 \documentclass[
-  article, % Indica que é um artigo acadêmico
-  11pt,    % Tamanho da fonte
+  %% Opções da classe memoir.
+  article, % Indica que é um artigo acadêmico.
+  11pt,    % Tamanho da fonte.
   oneside, % Para impressão apenas no recto.
   a4paper, % Tamanho do papel.
+  %% Opções da classe abntex2.
+  %%% Tìtulos de letra maiúscula.
   chapter=TITLE,
   section=TITLE,
   subsection=TITLE,
   subsubsection=TITLE,
+  %% Opções do pacote babel.
   english,
   brazilian
 ]{abntex2}
 
 % Pacotes.
+\usepackage[T1]{fontenc} % Permite fontes com mais glifos (letras).
+\usepackage[utf8]{inputenc} % UTF-8.
+%% Fonte bonita que é usada até hoje.
+%% Veja: <https://tex.stackexchange.com/questions/147194/is-it-still-useful-to-load-the-lmodern-package>
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{lmodern}
-\usepackage{amsmath, amsthm, amssymb, mathtools}
-\usepackage{microtype}
-\usepackage{indentfirst}
+\usepackage{amsmath, amsthm, amssymb, mathtools} % Coisas de matemática.
+\usepackage{microtype} % Personalização de justificação.
+\usepackage{indentfirst} % Indenta o primeiro parágrafo de cada seção.
 
 % Configuração ABNT.
 \titulo{\uppercase{Inteligência Artificial na Universidade Federal de Sergipe: Como o Seu Uso pode Comprometer o Aprendizado em Disciplinas Introdutórias de Programação}}
@@ -35,10 +43,9 @@
 \local{São Cristóvão}
 \data{2025}
 \preambulo{Artigo científico apresentado à Universidade Federal de Sergipe como requisito de avaliação parcial da disciplina de Métodos e Técnicas de Pesquisa para Computação e, por conseguinte, a obtenção dos seus créditos.}
-
 % Configuração de citação.
-\usepackage[brazilian,hyperpageref]{backref}
-\usepackage[alf]{abntex2cite}
+\usepackage[brazilian,hyperpageref]{backref} % Página com citações.
+\usepackage[alf]{abntex2cite} % Citações ABNT.
 \renewcommand{\backrefpagesname}{Citado na(s) página(s):~}
 \renewcommand{\backref}{}
 \renewcommand*{\backrefalt}[4]{
@@ -49,7 +56,6 @@
   \else
   Citado #1 vezes nas páginas #2.%
   \fi}%
-
 % Configuração do PDF.
 \makeatletter
 \hypersetup{
@@ -57,7 +63,7 @@
   pdfauthor={\@author},
   pdfsubject={\imprimirpreambulo},
   pdfcreator={LaTeX with abnTeX2},
-  pdfkeywords={universidade federal de sergipe}{inteligencia artificial}{educação},
+  pdfkeywords={universidade federal de sergipe}{federal university of sergipe}{inteligencia artificial}{artificial intelligence}{educação}{education},
   colorlinks=true,
   linkcolor=blue,
   citecolor=blue,
@@ -66,7 +72,6 @@
   bookmarksdepth=4
 }
 \makeatother
-
 % Comandos
 \newcommand{\imprimircapaelogo}{
   \begin{center}
@@ -74,28 +79,28 @@
   \end{center}
   \imprimircapa
 }
-
 % Espaçamento.
-% Mantive 3cm em tudo conforme seu código original (se for regra da UFS).
-% Se quiser padrão ABNT estrito, mude os segundos valores para 2cm.
 \setlrmarginsandblock{3cm}{3cm}{*}
 \setulmarginsandblock{3cm}{3cm}{*}
 \checkandfixthelayout
 \setlength{\parindent}{1.3cm}
 \setlength{\parskip}{0.2cm}
 \SingleSpacing
-
-\makeindex
-
+% Documento.
+\makeindex % Compila o índice.
 \begin{document}
 
 \selectlanguage{brazilian}
-\frenchspacing
+\frenchspacing % Espaçamento normal entre frases. O LaTeX usa o espaçamento arcaico de 2 espaços em vez de 1.
 
 \imprimircapaelogo
+
 \imprimirfolhaderosto
-\tableofcontents*
+
+\tableofcontents* % O "*" imprime o sumário sem indicar a página do próprio sumário.
+
 \cleardoublepage
+
 \textual
 
 \section{Introdução}
@@ -104,7 +109,7 @@ Atualmente, ferramentas digitais são onipresentes \citeonline{cornelio_historia
 
 É fundamental debater se o uso da IA compromete o aprendizado de programação em cursos de Tecnologia da Informação. Estudo da Microsoft \citeonline{leeImpactGenerativeAI2025} indica que o uso já impacta negativamente a retenção de conhecimento. Embora focado em profissionais, o resultado é relevante para a educação. Pesquisa do MIT \citeonline{kosmynaYourBrainChatGPT2025} corroborou esse cenário: participantes que utilizaram IA tiveram desempenho inferior comparado aos que usaram mecanismos de busca ou apenas o cérebro. Mesmo ao alternarem para tarefas sem auxílio, o grupo que iniciou com IA manteve desempenho pior.
 
-A popularização de LLMs como o ChatGPT no meio acadêmico torna o tema relevante. É necessário compreender o impacto do uso indiscriminado no amadurecimento cognitivo, incluindo a capacidade de aprendizado, tomada de decisões e pensamento crítico. Uma revisão sistemática de 70 estudos \citeonline{delikoura2025superficialoutputssuperficiallearning} revelou que a interação frequente com LLMs pode provocar um efeito de “compreensão superficial” do conteúdo e dependência da ferramenta. A pesquisa visa investigar os efeitos do uso excessivo de geradores de texto em disciplinas de programação e suas consequências, como a redução da criatividade, raciocínio lógico, memória e atenção.
+A popularização de LLMs como o ChatGPT no meio acadêmico torna o tema relevante. É necessário compreender o impacto do uso indiscriminado no amadurecimento cognitivo, incluindo a capacidade de aprendizado, tomada de decisões e pensamento crítico. Uma revisão sistemática de 70 estudos \citeonline{delikoura2025superficialoutputssuperficiallearning} revelou que a interação frequente com LLMs pode provocar um efeito de ``compreensão superficial'' do conteúdo e dependência da ferramenta. A pesquisa visa investigar os efeitos do uso excessivo de geradores de texto em disciplinas de programação e suas consequências, como a redução da criatividade, raciocínio lógico, memória e atenção.
 
 A importância da pesquisa abrange o contexto educacional e o mercado de trabalho, visto que estudantes dependentes de tecnologia serão os futuros profissionais. A análise questiona como tratar a dependência de IAs e garantir a formação crítica em uma realidade automatizada. A solução reside na administração do uso consciente e equilibrado da tecnologia, não em sua proibição, visando resultados educacionais significativos.
 
@@ -124,11 +129,11 @@ Os \textit{Large Language Models} (LLMs), exemplificados pelo ChatGPT e Gemini, 
 
 \subsection{Inteligência Artificial e Aprendizado de Máquina}
 
-A fundamentação teórica da Inteligência Artificial (IA) precede a própria consolidação da computação moderna. Em seu trabalho seminal de 1950, Alan Turing propôs a questão ``podem as máquinas pensar?'', estabelecendo o ``Jogo da Imitação'' (posteriormente conhecido como Teste de Turing) como um critério operacional para a inteligência \citeonline{turing_computing_1950}. No entanto, o termo ``Inteligência Artificial'' foi formalmente cunhado apenas em 1956, durante a conferência de Dartmouth, onde John McCarthy e outros pesquisadores propuseram que ``cada aspecto do aprendizado ou qualquer outra característica da inteligência pode, em princípio, ser descrita com tamanha precisão que uma máquina pode ser feita para simulá-la'' \citeonline{mccarthy_proposal_2006}. Desde então, a área evoluiu de sistemas baseados em regras simbólicas para abordagens estatísticas robustas.
+A fundamentação teórica da Inteligência Artificial (IA) precede a própria consolidação da computação moderna. Em seu trabalho seminal de 1950, Alan Turing propôs a questão: ``podem as máquinas pensar?'', estabelecendo o ``Jogo da Imitação'' (posteriormente conhecido como Teste de Turing) como um critério operacional para a inteligência \citeonline{turing_computing_1950}. No entanto, o termo ``Inteligência Artificial'' foi formalmente cunhado apenas em 1956, durante a conferência de Dartmouth, onde John McCarthy e outros pesquisadores propuseram que ``cada aspecto do aprendizado ou qualquer outra característica da inteligência pode, em princípio, ser descrita com tamanha precisão que uma máquina pode ser feita para simulá-la'' \citeonline{mccarthy_proposal_2006}. Desde então, a área evoluiu de sistemas baseados em regras simbólicas para abordagens estatísticas robustas.
 
 Contemporaneamente, a IA é definida não apenas pela simulação do pensamento humano, mas pela construção de agentes inteligentes. Segundo \citeonline{russell_artificial_2021}, um agente inteligente é uma entidade que percebe seu ambiente por meio de sensores e age sobre esse ambiente através de atuadores, visando maximizar suas chances de sucesso em uma determinada tarefa. Essa definição abrange desde algoritmos simples de controle até sistemas complexos de processamento de linguagem natural. A onipresença dessas tecnologias é evidenciada pelo crescimento do otimismo global e da utilização de ferramentas de IA em diversos setores produtivos e sociais \citeonline{google_global_2025}.
 
-Dentro do vasto campo da IA, destaca-se o Aprendizado de Máquina (\textit{Machine Learning} - ML) como o subcampo responsável pelos avanços mais significativos das últimas décadas. Diferentemente da programação tradicional, onde as regras são explicitamente codificadas, o Aprendizado de Máquina foca no desenvolvimento de algoritmos que melhoram seu desempenho automaticamente através da experiência. A definição formal amplamente aceita é dada por \citeonline{mitchell_machine_1997}: diz-se que um programa de computador aprende a partir da experiência $E$, em relação a uma classe de tarefas $T$ e medida de desempenho $P$, se seu desempenho em $T$, medido por $P$, melhora com a experiência $E$. Essa mudança de paradigma permitiu a resolução de problemas complexos, como reconhecimento de padrões e previsões estatísticas, que eram intratáveis via programação convencional.
+Dentro do vasto campo da IA, destaca-se o Aprendizado de Máquina (\textit{Machine Learning} - ML) como o subcampo responsável pelos avanços mais significativos das últimas décadas. Diferentemente da programação tradicional, onde as regras são explicitamente codificadas, o Aprendizado de Máquina foca no desenvolvimento de algoritmos que melhoram seu desempenho automaticamente através da experiência. A definição formal amplamente aceita é dada por \citeonline{mitchell_machine_1997}: diz-se que um programa de computador aprende a partir da experiência \(E\), em relação a uma classe de tarefas \(T\) e medida de desempenho \(P\), se seu desempenho em \(T\), medido por \(P\), melhora com a experiência \(E\). Essa mudança de paradigma permitiu a resolução de problemas complexos, como reconhecimento de padrões e previsões estatísticas, que eram intratáveis via programação convencional.
 
 A aplicação dessas tecnologias no cenário educacional introduz novos paradigmas e desafios. A introdução de modelos generativos, uma vertente avançada do ML, exige uma reavaliação das práticas pedagógicas. A \citeonline{unesco_guidance_2023} destaca que, embora a IA generativa ofereça oportunidades para personalizar o aprendizado, sua implementação requer diretrizes éticas rigorosas para garantir que a tecnologia aumente as capacidades humanas em vez de substituí-las ou atrofiar o pensamento crítico. Observa-se, portanto, uma tensão entre a eficiência oferecida pelos sistemas automatizados e a necessidade de preservar a integridade cognitiva dos estudantes \citeonline{marrOs15Maiores2023, gan_large_2023}.
 
@@ -183,6 +188,9 @@ Adicionalmente, \citeonline{delikoura2025superficialoutputssuperficiallearning} 
 Em suma, a literatura atual indica que, embora os LLMs possuam potencial como tutores auxiliares, seu uso irrestrito e não supervisionado tende a substituir, em vez de complementar, o esforço cognitivo necessário para o aprendizado profundo. Diante da onipresença dessas ferramentas, conclui-se que a adaptação curricular não é apenas desejável, mas imperativa para garantir que as futuras gerações de profissionais mantenham a capacidade de pensar, analisar e criar de forma autônoma.
 
 \postextual
+
 \cleardoublepage
+
 \bibliography{bibliografia}
+
 \end{document}
