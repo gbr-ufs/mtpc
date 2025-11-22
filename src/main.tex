@@ -27,7 +27,17 @@
 \usepackage{amsmath, amsthm, amssymb, mathtools} % Coisas de matemática.
 \usepackage{microtype} % Personalização de justificação.
 \usepackage{indentfirst} % Indenta o primeiro parágrafo de cada seção.
-
+\usepackage{graphicx} % Coisas gráficas.
+% Comandos
+\newcommand{\imprimircapaelogo}{
+  \begin{center}
+    \includegraphics[scale=0.2]{img/logo_ufs}
+  \end{center}
+  \imprimircapa
+}
+\newcommand{\orcid}[2]{
+  \href{#1}{\includegraphics[scale=0.06]{img/orcid.pdf}\hspace{1mm}#2}
+}
 % Configuração ABNT.
 \titulo{\uppercase{Inteligência Artificial na Universidade Federal de Sergipe: Como o Seu Uso pode Comprometer o Aprendizado em Disciplinas Introdutórias de Programação}}
 \autor{
@@ -35,7 +45,7 @@
   Bruno Danton Carneiro Silva \and
   Dávisson Cavalcante Costa \and
   Gabriel Ferreira Bernardo \and
-  Gabriel Santos de Souza \and
+  \orcid{https://orcid.org/0009-0005-5652-617X}{Gabriel Santos de Souza} \and
   Wevellyn Victória da Silva Azevedo
 }
 \orientador{Marcos Venícius Santos}
@@ -72,13 +82,6 @@
   bookmarksdepth=4
 }
 \makeatother
-% Comandos
-\newcommand{\imprimircapaelogo}{
-  \begin{center}
-    \includegraphics[scale=0.2]{img/logo_ufs}
-  \end{center}
-  \imprimircapa
-}
 % Espaçamento.
 \setlrmarginsandblock{3cm}{3cm}{*}
 \setulmarginsandblock{3cm}{3cm}{*}
