@@ -25,3 +25,4 @@ Durante a realização deste projeto, demonstramos conhecer:
 4. [Nix](https://nixos.org/).
 5. [GitHub Actions](https://github.com/features/actions).
 6. [ABNT](https://abnt.org.br/).
+7. [ORCID](https://orcid.org/).
