@@ -26,3 +26,4 @@ Durante a realização deste projeto, demonstramos conhecer:
 5. [GitHub Actions](https://github.com/features/actions).
 6. [ABNT](https://abnt.org.br/).
 7. [ORCID](https://orcid.org/).
+8. [pdf2htmlEX](https://github.com/pdf2htmlEX/pdf2htmlEX).
