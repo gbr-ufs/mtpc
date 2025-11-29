@@ -45,6 +45,7 @@ jobs:
     - name: Generate HTML
       run: |
         podman run -ti --rm -v .:/pdf -w /pdf pdf2htmlex/pdf2htmlex:0.18.8.rc2-master-20200820-alpine-3.12.0-x86_64 dist/main.pdf
+        mv main.html dist/index.html
     - name: Setup Pages
       uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b
     - name: Upload Page
