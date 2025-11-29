@@ -9,3 +9,4 @@ all:
 
 clean:
 	rm -rf $(DIST_DIR)
+	make -C $(SOURCE_DIR) $@

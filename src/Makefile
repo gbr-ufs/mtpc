@@ -7,6 +7,9 @@ $(DOCUMENT).pdf: $(DOCUMENT).tex
 .PHONY: $(DOCUMENT).pdf
 
 $(DOCUMENT).tex:
-	cluttex -e pdflatex --biber=biber $@
+	latexmk -pdf -use-make -auxdir=build $@
 
 .PHONY: $(DOCUMENT).tex
+
+clean:
+	latexmk -CA -auxdir=build
