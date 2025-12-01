@@ -20,7 +20,7 @@ Durante a realização deste projeto, demonstramos conhecer:
 
 1. [EditorConfig](https://editorconfig.org).
 2. [GNU Make](https://www.gnu.org/software/make/).
-3. [Latexmk](https://www.cantab.net/users/johncollins/latexmk/).
+3. [ClutTeX](https://github.com/minoki/cluttex).
 3. [direnv](https://direnv.net/).
 4. [Nix](https://nixos.org/).
 5. [GitHub Actions](https://github.com/features/actions).
