@@ -7,3 +7,4 @@ all:
 
 clean:
 	rm -rf $(OUT_DIR)
+	make -C $(SOURCE_DIR) $@
