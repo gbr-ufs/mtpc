@@ -1,11 +1,9 @@
-DOCUMENT = main
 SOURCE_DIR = src
-DIST_DIR = dist
+OUT_DIR = dist
 
 all:
+	mkdir -p $(OUT_DIR)
 	make -C $(SOURCE_DIR)
-	mkdir -p $(DIST_DIR)
-	mv $(SOURCE_DIR)/$(DOCUMENT).pdf $(DIST_DIR)
 
 clean:
-	rm -rf $(DIST_DIR)
+	rm -rf $(OUT_DIR)
