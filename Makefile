@@ -5,6 +5,11 @@ all:
 	mkdir -p $(OUT_DIR)
 	make -C $(SOURCE_DIR)
 
+# Updates the file continuously.
+watch:
+	mkdir -p $(OUT_DIR)
+	make -C $(SOURCE_DIR) $@
+
 clean:
 	rm -rf $(OUT_DIR)
 	make -C $(SOURCE_DIR) $@
