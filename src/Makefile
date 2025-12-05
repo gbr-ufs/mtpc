@@ -1,7 +1,10 @@
 DOCUMENT = main
 OUT_DIR = ../dist
 
-all: $(DOCUMENT).pdf
+all: $(OUT_DIR) $(DOCUMENT).pdf
+
+$(OUT_DIR):
+	mkdir -p $@
 
 $(DOCUMENT).pdf: $(DOCUMENT).tex
 	latexmk -pdf -auxdir=build -outdir=$(OUT_DIR) $<
