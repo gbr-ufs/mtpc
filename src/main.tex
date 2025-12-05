@@ -33,12 +33,19 @@ citecount=true % Contador de quantas vezes uma referência foi citada.
 ]{biblatex}
 \addbibresource{bibliografia.bib}
 % Comandos.
+%% Imprime logo da UFS antes de imprimir a capa.
 \newcommand{\imprimircapaelogo}{
   \begin{center}
     \includegraphics[scale=0.2]{img/logo_ufs}
   \end{center}
   \imprimircapa
 }
+%% Cria uma badge e link direcionando ao ORCID da pessoa.
+%% Parâmetros:
+%% #1: Link para o ORCID da pessoa.
+%% #2: Nome da pessoa.
+%% Exemplo:
+%% \orcid{https://orcid.org/0009-0005-5652-617X}{Gabriel Santos de Souza}
 \newcommand{\orcid}[2]{
   \href{#1}{\includegraphics[scale=0.06]{img/orcid.pdf}\hspace{1mm}#2}
 }
