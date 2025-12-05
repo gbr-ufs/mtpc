@@ -3,6 +3,7 @@
   %% Opções da classe memoir.
   article, % Indica que é um artigo acadêmico.
   11pt,    % Tamanho da fonte.
+  extrafontsizes, % Carrega os pacotes fontenv e lmodern automaticamente.
   oneside, % Para impressão apenas no recto.
   a4paper, % Tamanho do papel.
   %% Opções da classe abntex2.
@@ -15,13 +16,8 @@
   english,
   brazilian
 ]{abntex2}
-
 % Pacotes.
-\usepackage[T1]{fontenc} % Permite fontes com mais glifos (letras).
 \usepackage[utf8]{inputenc} % UTF-8.
-%% Fonte bonita que é usada até hoje.
-%% Veja: <https://tex.stackexchange.com/questions/147194/is-it-still-useful-to-load-the-lmodern-package>
-\usepackage{lmodern}
 \usepackage{amsmath, amsthm, amssymb, mathtools} % Coisas de matemática.
 \usepackage{microtype} % Personalização de justificação.
 \usepackage{indentfirst} % Indenta o primeiro parágrafo de cada seção.
