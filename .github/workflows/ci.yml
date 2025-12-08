@@ -44,7 +44,7 @@ jobs:
         path: dist/main.pdf
     - name: Generate HTML
       run: |
-        docker run --rm -v ./dist:/pdf -w /pdf pdf2htmlex/pdf2htmlex:0.18.8.rc2-master-20200820-alpine-3.12.0-x86_64 main.pdf index.html
+        docker run --rm -v ./dist:/pdf -w /pdf pdf2htmlex/pdf2htmlex@sha256:2832056665f09535719c28ac8c9ff2730bb8935767e28264bf4979a2f330dc0b main.pdf index.html
     - name: Setup Pages
       uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b
     - name: Upload Page
