@@ -27,4 +27,3 @@ Durante a realização deste projeto, demonstramos conhecer:
 6. [ABNT](https://abnt.org.br/).
 7. [ORCID](https://orcid.org/).
 8. [pdf2htmlEX](https://github.com/pdf2htmlEX/pdf2htmlEX).
-9. a
