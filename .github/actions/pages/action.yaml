@@ -1,0 +1,17 @@
+name: Pages
+
+runs:
+  using: "composite"
+  steps:
+    - name: Generate HTML
+      shell: bash
+      run: |
+        docker run --rm -v ./dist:/pdf -w /pdf pdf2htmlex/pdf2htmlex:0.18.8.rc2-master-20200820-alpine-3.12.0-x86_64 main.pdf index.html
+    - name: Setup Pages
+      uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b
+    - name: Upload Page
+      uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa
+      with:
+        path: 'dist/'
+    - name: Deploy Page
+      uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e

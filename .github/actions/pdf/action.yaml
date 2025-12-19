@@ -1,0 +1,19 @@
+name: PDF
+
+runs:
+  using: "composite"
+  steps:
+    - name: Compile to PDF
+      uses: xu-cheng/texlive-action@475ab07999e9709e524c3708488c8c170d3a6611
+      with:
+        docker_image: ghcr.io/xu-cheng/texlive-alpine@sha256:556e2e2caa7d489ce155de0eb3f43e324e6502ed4e9871aa400662b156cf00ad
+        run: |
+          make
+    - name: Fix Permissions
+      shell: bash
+      run: sudo chown -R $USER:$USER dist
+    - name: Upload Artifact
+      uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4
+      with:
+        name: dist
+        path: dist/main.pdf
