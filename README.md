@@ -10,20 +10,20 @@ Artigo científico escrito para a obtenção dos créditos da disciplina "Métod
 
 Durante a realização deste projeto, demonstramos conhecer:
 
-1. [Git](https://git-scm.com).
-2. [GitHub](https://github.com).
-3. [Markdown](https://daringfireball.net/projects/markdown).
-4. [LaTeX](https://latex-project.org/).
-5. [BibTeX](https://www.bibtex.org/).
+- [Git](https://git-scm.com).
+- [GitHub](https://github.com).
+- [Markdown](https://daringfireball.net/projects/markdown).
+- [LaTeX](https://latex-project.org/).
+- [BibTeX](https://www.bibtex.org/).
 
 ## Competências Adicionais
 
-1. [EditorConfig](https://editorconfig.org).
-2. [GNU Make](https://www.gnu.org/software/make/).
-3. [Latexmk](https://www.cantab.net/users/johncollins/latexmk/).
-3. [direnv](https://direnv.net/).
-4. [Nix](https://nixos.org/).
-5. [GitHub Actions](https://github.com/features/actions).
-6. [ABNT](https://abnt.org.br/).
-7. [ORCID](https://orcid.org/).
-8. [pdf2htmlEX](https://github.com/pdf2htmlEX/pdf2htmlEX).
+- [EditorConfig](https://editorconfig.org).
+- [GNU Make](https://www.gnu.org/software/make/).
+- [Latexmk](https://www.cantab.net/users/johncollins/latexmk/).
+- [direnv](https://direnv.net/).
+- [Nix](https://nixos.org/).
+- [GitHub Actions](https://github.com/features/actions).
+- [ABNT](https://abnt.org.br/).
+- [ORCID](https://orcid.org/).
+- [pdf2htmlEX](https://github.com/pdf2htmlEX/pdf2htmlEX).
