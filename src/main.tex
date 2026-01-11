@@ -1,22 +1,8 @@
 % Classe.
-\documentclass[
-  %% Opções da classe memoir.
-  article, % Indica que é um artigo acadêmico.
-  12pt,    % Tamanho da fonte.
-  extrafontsizes, % Carrega os pacotes fontenv e lmodern automaticamente.
-  oneside, % Para impressão apenas no recto.
-  a4paper, % Tamanho do papel.
-  %% Opções da classe abntex2.
-  %%% Tìtulos de letra maiúscula.
-  chapter=TITLE,
-  section=TITLE,
-  subsection=TITLE,
-  subsubsection=TITLE,
-  %% Opções do pacote babel.
-  english,
-  brazilian
-]{abntex2}
+\documentclass{SBCbookchapter}
 % Pacotes.
+\usepackage[T1]{fontenc} % Permite fontes com mais glifos (letras).
+\usepackage[english, brazilian]{babel} % Coisas de linguagem.
 \usepackage{amsmath, amsthm, amssymb, mathtools} % Coisas de matemática.
 \usepackage{microtype} % Personalização de justificação.
 \usepackage{indentfirst} % Indenta o primeiro parágrafo de cada seção.
@@ -32,88 +18,26 @@ backref=true, % Indice as páginas onde as citações aparecem.
 citecount=true % Contador de quantas vezes uma referência foi citada.
 ]{biblatex}
 \addbibresource{bibliografia.bib}
-% Comandos.
-%% Imprime logo da UFS antes de imprimir a capa.
-\newcommand{\imprimircapaelogo}{
-  \begin{center}
-    \includegraphics[scale=0.2]{img/logo_ufs}
-  \end{center}
-  \imprimircapa
-}
-%% Cria uma badge e link direcionando ao ORCID da pessoa.
-%% Parâmetros:
-%% #1: Link para o ORCID da pessoa.
-%% #2: Nome da pessoa.
-%% Exemplo:
-%% \orcid{https://orcid.org/0009-0005-5652-617X}{Gabriel Santos de Souza}
-\newcommand{\orcid}[2]{
-  \href{#1}{\includegraphics[scale=0.06]{img/orcid.pdf}\hspace{1mm}} #2
-}
-% Configuração ABNT.
-\titulo{\uppercase{Inteligência Artificial na Universidade Federal de Sergipe: Como o Seu Uso pode Comprometer o Aprendizado em Disciplinas Introdutórias de Programação}}
-\autor{
-  Alexis Cristian Pertile de Oliveira Filho \and
-  Bruno Danton Carneiro Silva \and
-  Dávisson Cavalcante Costa \and
-  Gabriel Ferreira Bernardo \and
-  \orcid{https://orcid.org/0009-0005-5652-617X}{Gabriel Santos de Souza} \and
+% Informações.
+\title{Inteligência Artificial na Universidade Federal de Sergipe: Como o Seu Uso pode Comprometer o Aprendizado em Disciplinas Introdutórias de Programação}
+\author{
+  Alexis Cristian Pertile de Oliveira Filho,
+  Bruno Danton Carneiro Silva,
+  Dávisson Cavalcante Costa,
+  Gabriel Ferreira Bernardo,
+  Gabriel Santos de Souza,
   Wevellyn Victória da Silva Azevedo
 }
-\orientador{Marcos Venícius Santos}
-\instituicao{Universidade Federal de Sergipe -- UFS}
-\local{São Cristóvão}
-\data{2025}
-\preambulo{Artigo científico apresentado à Universidade Federal de Sergipe como requisito de avaliação parcial da disciplina de Métodos e Técnicas de Pesquisa para Computação e, por conseguinte, a obtenção dos seus créditos.}
-% Configuração do PDF.
-\makeatletter
-\hypersetup{
-  pdftitle={\@title},
-  pdfauthor={\@author},
-  pdfsubject={\imprimirpreambulo},
-  pdfcreator={LaTeX with abnTeX2},
-  pdfkeywords={universidade federal de sergipe}{federal university of sergipe}{inteligencia artificial}{artificial intelligence}{educação}{education}{ensino superior}{higher education},
-  colorlinks=true, % Mudar para "false" se for imprimir.
-  linkcolor=blue,
-  citecolor=blue,
-  filecolor=magenta,
-  urlcolor=blue,
-  bookmarksdepth=4
-}
-\makeatother
-% Espaçamento.
-\setlrmarginsandblock{3cm}{3cm}{*}
-\setulmarginsandblock{3cm}{3cm}{*}
-\checkandfixthelayout
-\setlength{\parindent}{1.3cm}
-\setlength{\parskip}{0.2cm}
-\SingleSpacing
 % Documento.
-\makeindex % Compila o índice.
 \begin{document}
+\maketitle
 
 \selectlanguage{brazilian}
 \frenchspacing % Espaçamento normal entre frases. O LaTeX usa o espaçamento arcaico de 2 espaços em vez de 1.
 
-\imprimircapaelogo
-
-\imprimirfolhaderosto
-
-\begin{siglas}
-\item[GPT] \textit{Generative Pretrained Transformer}
-\item[IA] Inteligência Artificial
-\item[LLM(s)] \textit{Large Language Model(s)}
-\item[MIT] \textit{Massachusetts Institute of Technology}
-\item[ML] \textit{Machine Learning}
-\item[RNA(s)] Rede(s) Neural(ais) Artificial(ais)
-\item[MLOps] \textit{Machine Learning Operations}
-\item[UFS] Universidade Federal de Sergipe
-\end{siglas}
-
-\tableofcontents* % O "*" imprime o sumário sem indicar a página do próprio sumário.
-
-\pagebreak
-
-\textual
+\begin{resumo}
+Artigo científico apresentado à Universidade Federal de Sergipe como requisito de avaliação parcial da disciplina de Métodos e Técnicas de Pesquisa para Computação e, por conseguinte, a obtenção dos seus créditos.
+\end{resumo}
 
 \section{Introdução}
 
@@ -225,8 +149,6 @@ O estudo \citetitle{xie2024integrating} realizou uma pesquisa empírica de abord
 \textcite{woodbridgeTopicDiscoveryClassification2025} analisam o uso de técnicas automatizadas para identificar, com foco na análise automatizada de políticas institucionais sobre o uso responsável de inteligência artificial generativa no ensino superior e classificar políticas institucionais relacionadas ao uso responsável de inteligência artificial generativa no ensino superior. A amostra foi feita de 212 documentos com regras  coletados de 22 instituições diferentes, Os resultados indicam alta precisão na identificação dos temas e dos níveis de permissão para o uso da IA, contribuindo para maior clareza e padronização das políticas educacionais. A pesquisa foi conduzida com base em instituições de ensino dos Estados Unidos, o que pode limitar a generalização dos resultados para outros contextos educacionais.
 
 A literatura recente demonstra que, embora a IA Generativa ofereça suporte valioso na correção de erros e na formulação de políticas institucionais, há uma tendência de dificuldade discente na depuração e compreensão conceitual profunda de códigos automatizados. Nota-se que a maioria dos estudos foca em contextos internacionais (Espanha e EUA) ou em perfis de estudantes fora das carreiras de computação \textit{stricto sensu}. Esta pesquisa diferencia-se ao preencher essa lacuna geográfica e demográfica, investigando especificamente o impacto do uso dessas ferramentas na autonomia intelectual de estudantes de computação da Universidade Federal de Sergipe (UFS). Ao focar nos riscos de dependência e na possível erosão da lógica fundamental, o presente trabalho justifica-se pela necessidade de validar se os desafios globais de retenção de conhecimento se reproduzem no cenário acadêmico nacional.
-
-\postextual
 
 \pagebreak
 
