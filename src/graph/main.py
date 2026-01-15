@@ -48,7 +48,7 @@ def calculate_metrics(
         df.select(pl.col(col).str.strip_chars(".").alias(ans_col))
         .group_by(ans_col)
         .len(name=count_col)
-        .with_columns((pl.col(count_col) / pl.col(count_col).sum()).alias(pct_col))
+        .with_columns((pl.col(count_col) / df.height).alias(pct_col))
         .sort(count_col, descending=True)
     )
 
