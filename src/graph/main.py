@@ -226,7 +226,7 @@ def main() -> None:
 
     for question in questions:
         chart_types[args.chart_type](question[0], question[1], "build")
-        print(f"{parser.prog}: generated pie chart for {question[1]}")
+        print(f"{parser.prog}: generated {args.chart_type} chart for {question[1]}")
 
 
 if __name__ == "__main__":
