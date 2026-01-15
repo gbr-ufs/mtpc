@@ -22,6 +22,7 @@ from altair import Chart, TitleParams
 from polars import DataFrame
 from tenacity import retry, stop_after_attempt, wait_exponential
 
+
 parser = argparse.ArgumentParser(
     prog="graph", description="Generate graphs from a database"
 )
@@ -57,25 +58,21 @@ class Question:
     generating charts.
 
     Attributes:
-        value (DataFrame): The column in DataFrame format in a 'answers-count'
-        pair, to be passed to a chart as data.
-        answers (str): The label of the column containing the unique answers.
-        counts (str): The label of the column containing each answer's count.
         question (str): The title of the column, which is the original question
         that was asked.
+        answers (str): The label of the column containing the unique answers.
+        counts (str): The label of the column containing each answer's count.
+        value (DataFrame): The column in DataFrame format in a 'answers-count'
+        pair, to be passed to a chart as data.
     """
 
-    def __init__(self, col: str, df: DataFrame):
-        self.question: str = col
+    def __init__(self, col_idx: int, df: DataFrame):
+        self.question: str = df.columns[col_idx]
         self.answers: str = "Respostas"
         self.counts: str = "Contagem"
         self.percent: str = "Porcentagem"
         self.value: DataFrame = calculate_metrics(
-            df,
-            self.question,
-            ans_col=self.answers,
-            count_col=self.counts,
-            pct_col=self.percent,
+            df, self.question, self.answers, self.counts, self.percent
         )
 
 
@@ -165,63 +162,20 @@ def main() -> None:
         "pie": gen_pie_chart,
         "bar": gen_bar_chart,
     }
+    columns_names: list[tuple[int, str]] = [
+        # Index doesn't start at zero because we have timestamps at zero.
+        (1, "frequency"),
+        (2, "tools"),
+        (3, "step"),
+        (4, "action"),
+        (5, "debugging"),
+        (6, "test"),
+        (7, "learning"),
+        (8, "opinion"),
+        (9, "professor"),
+    ]
     questions: list[tuple[Question, str]] = [
-        (
-            Question(
-                "Com que frequência você utiliza ferramentas de Inteligência Artificial (como ChatGPT, Gemini, Copilot) para auxiliar nas tarefas da disciplina de programação?",
-                df,
-            ),
-            "frequency",
-        ),
-        (Question("Quais ferramentas você utiliza?", df), "tools"),
-        (
-            Question(
-                "Em qual etapa do desenvolvimento do código você sente maior necessidade de usar a IA?",
-                df,
-            ),
-            "step",
-        ),
-        (
-            Question(
-                "Quando a IA gera um código para você, o que você costuma fazer?", df
-            ),
-            "action",
-        ),
-        (
-            Question(
-                "Você sente que o uso da IA atrapalha a sua capacidade de encontrar erros (debugar) sozinho?",
-                df,
-            ),
-            "debugging",
-        ),
-        (
-            Question(
-                "Se você tivesse que fazer uma prova prática hoje, sem acesso à internet ou IA, como avaliaria sua confiança para resolver os problemas?",
-                df,
-            ),
-            "test",
-        ),
-        (
-            Question(
-                "Você acredita que aprende menos quando utiliza a IA para gerar a resposta de um exercício?",
-                df,
-            ),
-            "learning",
-        ),
-        (
-            Question(
-                "Na sua opinião, o uso de IA em disciplinas introdutórias deveria ser",
-                df,
-            ),
-            "opinion",
-        ),
-        (
-            Question(
-                "Para você, haveria algum problema em admitir ao seu professor que usou IA para realizar uma tarefa?",
-                df,
-            ),
-            "professor",
-        ),
+        (Question(idx, df), name) for idx, name in columns_names
     ]
 
     for question in questions:
