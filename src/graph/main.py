@@ -62,8 +62,9 @@ class Question:
         that was asked.
         answers (str): The label of the column containing the unique answers.
         counts (str): The label of the column containing each answer's count.
-        value (DataFrame): The column in DataFrame format in a 'answers-count'
-        pair, to be passed to a chart as data.
+        percent (str): The label of the column containing each answer's percentage.
+        value (DataFrame): The column in DataFrame format in a
+        'answers-count-percentage' trio, to be passed to a chart as data.
     """
 
     def __init__(self, col_idx: int, df: DataFrame):
