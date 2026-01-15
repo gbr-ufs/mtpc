@@ -16,6 +16,18 @@ Durante a realização deste projeto, demonstramos conhecer:
 - [LaTeX](https://latex-project.org/).
 - [BibTeX](https://www.bibtex.org/).
 
+## Python
+
+- [altair](https://altair-viz.github.io/).
+- [ruff](https://docs.astral.sh/ruff/).
+- [polars](https://pola.rs/).
+- [Python](https://www.python.org/).
+- [requests](https://docs.python-requests.org/en/latest/index.html).
+- [tenacity](https://tenacity.readthedocs.io/en/latest/).
+- [ty](https://docs.astral.sh/ty/).
+- [uv](https://docs.astral.sh/uv/).
+- [vl-convert](https://github.com/vega/vl-convert).
+
 ## Competências Adicionais
 
 - [EditorConfig](https://editorconfig.org).
