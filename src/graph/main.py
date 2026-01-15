@@ -12,7 +12,7 @@ import argparse
 import os
 
 from argparse import Namespace
-from typing import Any
+from typing import Callable
 
 import altair as alt
 import polars as pl
@@ -161,7 +161,7 @@ def main() -> None:
     url: str = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTOHDQBlfxZ9wKL5_80fPcM5uJcm6ftUSBSi1y9pvIONMtygAw_YtWWNWIdxZvndRy-0W-sU1dH3dLf/pub?gid=1668449075&single=true&output=csv"
     get_data(url, "data.csv")
     df: DataFrame = pl.read_csv("data.csv")
-    chart_types: dict[str, Any] = {
+    chart_types: dict[str, Callable] = {
         "pie": gen_pie_chart,
         "bar": gen_bar_chart,
     }
