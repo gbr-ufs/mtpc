@@ -1,54 +1,68 @@
 % Classe.
-\documentclass{SBCbookchapter}
+\documentclass[12pt]{article}
 % Pacotes.
 \usepackage[T1]{fontenc} % Permite fontes com mais glifos (letras).
-\usepackage[english, brazilian]{babel} % Coisas de linguagem.
 \usepackage{amsmath, amsthm, amssymb, mathtools} % Coisas de matemática.
-\usepackage{microtype} % Personalização de justificação.
+\usepackage{sbc-template} % "Classe" da SBC.
+\makeatletter
+\let\bbl@normalsf\relax % Deixando o template da SBC compatível com o Babel.
+\makeatother
+\usepackage[english, brazilian]{babel} % Coisas de linguagem.
 \usepackage{indentfirst} % Indenta o primeiro parágrafo de cada seção.
 \usepackage{graphicx} % Coisas gráficas.
 %% Citação.
 \usepackage{csquotes} % Aspas que se ajustam ao contexto automaticamente.
 \usepackage[
-style=abnt,
 backend=biber, % Motor de processamento mais moderno que o bibtex.
+backref=true,
+dashed=false, % Desativa a substituição de nomes de autores repetidos.
 giveninits=true, % Abrevia os primeiros nomes.
-uniquename=init, % Evita nomes ambiguos.
-backref=true, % Indice as páginas onde as citações aparecem.
-citecount=true % Contador de quantas vezes uma referência foi citada.
+maxcitenames=2,
+style=ext-authoryear, % O estilo da SBC não funciona com o BibLaTeX.
+uniquename=init
 ]{biblatex}
+\DeclareOuterCiteDelims{parencite}{\bibopenbracket}{\bibclosebracket}
 \addbibresource{bibliografia.bib}
-%% Metadados do PDF.
+% Informações.
+\title{Inteligência Artificial na Universidade Federal de Sergipe: Como o Seu Uso pode Comprometer o Aprendizado em Disciplinas Introdutórias de Programação}
+\author{
+  Alexis Cristian Pertile de Oliveira Filho\inst{1}\\
+  Bruno Danton Carneiro Silva\inst{1}\\
+  Dávisson Cavalcante Costa\inst{1}\\
+  Gabriel Ferreira Bernardo\inst{1}\\
+  Gabriel Santos de Souza\inst{1}\\
+  Wevellyn Victória da Silva Azevedo\inst{1}
+}
+\address{Departamento de Computação\\
+  Universidade Federal de Sergipe (UFS) -- São Cristóvão, SE -- Brazil}
+% Metadados do PDF.
 \usepackage{hyperref}
 \makeatletter
 \hypersetup{
   pdftitle={\@title},
   pdfauthor={\@author},
   pdfsubject={Artigo científico apresentado à Universidade Federal de Sergipe como requisito de avaliação parcial da disciplina de Métodos e Técnicas de Pesquisa para Computação e, por conseguinte, a obtenção dos seus créditos.},
-  pdfcreator={LaTeX with SBCbookchapter},
-  pdfkeywords={universidade federal de sergipe}{federal university of sergipe}{inteligencia artificial}{artificial intelligence}{educação}{education}{ensino superior}{higher education}
+  pdfcreator={LaTeX with sbc-template},
+  pdfkeywords={universidade federal de sergipe,federal university of sergipe,inteligencia artificial,artificial intelligence,educação,education,ensino superior,higher education}
 }
 \makeatother
-% Informações.
-\title{Inteligência Artificial na Universidade Federal de Sergipe: Como o Seu Uso pode Comprometer o Aprendizado em Disciplinas Introdutórias de Programação}
-\author{
-  Alexis Cristian Pertile de Oliveira Filho,
-  Bruno Danton Carneiro Silva,
-  Dávisson Cavalcante Costa,
-  Gabriel Ferreira Bernardo,
-  Gabriel Santos de Souza,
-  Wevellyn Victória da Silva Azevedo
-}
 % Documento.
 \begin{document}
+
 \maketitle
+
+\begin{abstract}
+  \selectlanguage{english}
+  Scientific article presented to the Universidade Federal de Sergipe as requesite for the partial evaliation of the subject Methods and Techniques for Computing Research, and, therefore, the acquiral of its credits.
+\end{abstract}
+
+\begin{resumo}
+  \selectlanguage{brazilian}
+  Artigo científico apresentado à Universidade Federal de Sergipe como requisito de avaliação parcial da disciplina de Métodos e Técnicas de Pesquisa para Computação e, por conseguinte, a obtenção dos seus créditos.
+\end{resumo}
 
 \selectlanguage{brazilian}
 \frenchspacing % Espaçamento normal entre frases. O LaTeX usa o espaçamento arcaico de 2 espaços em vez de 1.
-
-\begin{resumo}
-Artigo científico apresentado à Universidade Federal de Sergipe como requisito de avaliação parcial da disciplina de Métodos e Técnicas de Pesquisa para Computação e, por conseguinte, a obtenção dos seus créditos.
-\end{resumo}
 
 \section{Introdução}
 
@@ -244,8 +258,6 @@ O cronograma de execução foi estruturado nas seguintes etapas, com os respecti
 \subsection{Validação e Avaliação}
 A eficácia da metodologia será avaliada através da consistência estatística dos dados coletados e da capacidade de responder às perguntas de pesquisa formuladas. A validação ocorrerá pela comparação dos resultados obtidos na UFS com estudos similares, como os realizados pelo MIT (\parencite{kosmynaYourBrainChatGPT2025}) e Microsoft (\parencite{leeImpactGenerativeAI2025}), permitindo verificar se o fenómeno da redução do desempenho em tarefas não assistidas se repete no contexto local.
 
-
-
-\printbibliography
+\printbibliography[title={Referências}]
 
 \end{document}
