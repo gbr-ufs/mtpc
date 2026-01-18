@@ -6,4 +6,5 @@
 !.gitignore
 
 # Ignore build directories.
-dist/
+build
+dist
