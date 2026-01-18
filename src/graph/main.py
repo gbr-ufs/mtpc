@@ -175,9 +175,36 @@ def main() -> None:
         (8, "opinion"),
         (9, "professor"),
     ]
-    questions: list[tuple[Question, str]] = [
-        (Question(idx, df), name) for idx, name in columns_names
-    ]
+    questions: list[tuple[Question, str]] = []
+    for idx, name in columns_names:
+        current_df: DataFrame = df
+
+        # Consertando a coluna de ferramentas.
+        if idx == 2:
+            replacements: dict[str, str] = {
+                "Chat Gpt": "ChatGPT",
+                "Gpt": "ChatGPT",
+                "Chat": "ChatGPT",
+                "Chatgpt": "ChatGPT",
+                "Deepseak": "DeepSeek",
+                "Deepseek": "DeepSeek",
+                "De Vez Em Nunca O Deepseak": "DeepSeek",
+            }
+
+            current_df = (
+                current_df.with_columns(
+                    pl.col(df.columns[idx]).str.replace_all(" e ", ",").str.split(",")
+                )
+                .explode(df.columns[idx])  # Cria uma linha por ferramenta.
+                .with_columns(
+                    pl.col(df.columns[idx])
+                    .str.strip_chars(" .")  # Remove espaços e pontos.
+                    .str.to_titlecase()
+                )
+                .with_columns(pl.col(df.columns[idx]).replace(replacements))
+            )
+
+        questions.append((Question(idx, current_df), name))
 
     for question in questions:
         chart_types[args.chart_type](question[0], question[1], "build")
