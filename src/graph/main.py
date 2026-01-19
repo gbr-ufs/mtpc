@@ -131,7 +131,8 @@ def gen_bar_chart(question: Question, filename: str, dir: str = ".") -> None:
         color=alt.Color(question.answers, legend=None),
     )
     text = base.mark_text(align="left", baseline="middle", dx=3).encode(
-        text=alt.Text(question.percent, format=".1%"), color=alt.value("black")
+        text=alt.Text(question.counts),
+        color=alt.value("black"),
     )
     chart = pie + text
 
