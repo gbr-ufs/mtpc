@@ -247,13 +247,24 @@ Esta seção tem como objetivo apresentar, analisar e discutir os dados obtidos 
 
 A primeira pergunta de pesquisa (QP1) buscou investigar: \enquote{Com que frequência e intensidade os alunos ingressantes utilizam ferramentas de IA Generativa para a resolução de atividades de programação?}. Compreender a intensidade de uso é o primeiro passo para dimensionar o impacto da tecnologia no ecossistema acadêmico local.
 
-[(frequency.pdf)] Figura 1 – Frequência de utilização de ferramentas de IA por discentes.
-[(tools.pdf)] Figura 2 – Ferramentas de IA mais utilizadas pelos estudantes.
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=.75\textwidth]{img/frequency}
+  \caption{Frequência de utilização de ferramentas de IA por discentes.}
+  \label{fig:frequency}
+\end{figure}
 
-As Figuras 1 e 2 ilustram o perfil de adoção da tecnologia. A visualização por gráfico de barras horizontais foi escolhida para evidenciar a distribuição da frequência e a popularidade das ferramentas. Observa-se que o uso é predominante: somando-se as categorias \enquote{Regularmente} (11) e \enquote{Frequentemente} (8), tem-se que 73\% da amostra recorre à IA de forma habitual. Apenas 2 alunos indicaram uso \enquote{Sempre} e 5 \enquote{Raramente}. Quanto às ferramentas, nota-se uma liderança do Gemini (24 indicações), seguido pelo ChatGPT (17 indicações), com presença marginal de outras ferramentas como Copilot e DeepSeek.
+\begin{figure}[ht]
+  \centering
+  \includegraphics{img/tools}
+  \caption{Ferramentas de IA mais utilizadas pelos estudantes.}
+  \label{fig:tools}
+\end{figure}
 
-Os resultados confirmam que a IA Generativa já é uma realidade consolidada nas disciplinas introdutórias da UFS. A alta frequência de uso alinha-se às observações de \parencite{marrOs15Maiores2023} sobre o crescimento do uso global e otimismo em relação à IA. Não se trata mais de uma tecnologia de nicho, mas de um recurso cotidiano para a maioria dos estudantes.
-Um dado divergente da literatura tradicional, que frequentemente cita o ChatGPT como sinônimo de LLM \parencite{openai_funding_2025}, é a predominância do Gemini nesta amostra. Isso pode indicar uma tendência local de preferência por ferramentas que ofereçam integração com o ecossistema Google ou janelas de contexto maiores/atualizadas, sugerindo que o monopólio inicial da OpenAI está sendo contestado no ambiente acadêmico. A onipresença dessas ferramentas reforça a necessidade de adaptação curricular mencionada por \parencite{jensen_generative_2025}, visto que ignorar a ferramenta não é mais uma opção viável.
+As Figuras \ref{fig:frequency} e \ref{fig:tools} ilustram o perfil de adoção da tecnologia. A visualização por gráfico de barras horizontais foi escolhida para evidenciar a distribuição da frequência e a popularidade das ferramentas. Observa-se que o uso é predominante: somando-se as categorias "Regularmente" (11) e "Frequentemente" (8), tem-se que 73\% da amostra recorre à IA de forma habitual. Apenas 2 alunos indicaram uso "Sempre" e 5 "Raramente". Quanto às ferramentas, nota-se uma liderança do Gemini (24 indicações), seguido pelo ChatGPT (17 indicações), com presença marginal de outras ferramentas como Copilot e DeepSeek.
+
+Os resultados confirmam que a IA Generativa já é uma realidade consolidada nas disciplinas introdutórias da UFS. A alta frequência de uso alinha-se às observações de \textcite{marrOs15Maiores2023} sobre o crescimento do uso global e otimismo em relação à IA. Não se trata mais de uma tecnologia de nicho, mas de um recurso cotidiano para a maioria dos estudantes.
+Um dado divergente da literatura tradicional, que frequentemente cita o ChatGPT como sinônimo de LLM \parencite{openai_funding_2025}, é a predominância do Gemini nesta amostra. Isso pode indicar uma tendência local de preferência por ferramentas que ofereçam integração com o ecossistema Google ou janelas de contexto maiores/atualizadas, sugerindo que o monopólio inicial da OpenAI está sendo contestado no ambiente acadêmico. A onipresença dessas ferramentas reforça a necessidade de adaptação curricular mencionada por \textcite{jensen_generative_2025}, visto que ignorar a ferramenta não é mais uma opção viável.
 
 Em resposta à QP1, constata-se que a frequência de uso é alta e regular, caracterizando uma integração profunda da IA na rotina de estudos. A intensidade do uso, majoritariamente concentrada no Gemini e ChatGPT, indica que os alunos ingressantes já veem a IA como parte integrante do \enquote{kit de ferramentas} do programador, superando a fase de experimentação inicial.
 
@@ -261,27 +272,55 @@ Em resposta à QP1, constata-se que a frequência de uso é alta e regular, cara
 
 A segunda pergunta (QP2) investigou: \enquote{Qual é a percepção dos discentes sobre os efeitos dessas ferramentas na capacidade cognitiva, especificamente na memória e raciocínio lógico?}. Esta análise busca contrastar a hipótese da \enquote{dívida cognitiva} com a autopercepção dos estudantes.
 
-[(learning.pdf)] Figura 3 – Autopercepção sobre a qualidade do aprendizado com uso de IA.
-[(debugging.pdf)] Figura 4 – Percepção de dependência na tarefa de depuração (debugging).
-[(test.pdf)] Figura 5 – Nível de confiança para resolver problemas sem auxílio tecnológico.
+\begin{figure}[ht]
+  \centering
+  \includegraphics{img/learning}
+  \caption{Autopercepção sobre a qualidade do aprendizado com uso de IA.}
+  \label{fig:learning}
+\end{figure}
 
-Os gráficos acima buscam correlacionar a sensação de aprendizado com a confiança técnica. A Figura 3 revela uma divisão: enquanto 12 alunos sentem que o aprendizado é igual, 10 (quase 40\%) admitem que ele se torna superficial. Contudo, as Figuras 4 e 5 mostram uma alta autoconfiança: 17 alunos afirmam conseguir depurar sem a IA e 23 relatam confiança \enquote{Média} ou \enquote{Alta} para realizar provas sem consulta. A análise destes dados aponta para uma dissonância cognitiva potencial. A literatura, especificamente \parencite{kosmynaYourBrainChatGPT2025}, fornece evidências neurocientíficas de que o uso de IA reduz a conectividade cerebral e gera \enquote{dívida cognitiva}. No entanto, os alunos da UFS demonstram alta confiança em suas habilidades manuais (Figuras 4 e 5).
+\begin{figure}[ht]
+  \centering
+  \includegraphics{img/debugging}
+  \caption{Percepção de dependência na tarefa de depuração (debugging).}
+  \label{fig:debugging}
+\end{figure}
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics{img/test}
+  \caption{Nível de confiança para resolver problemas sem auxílio tecnológico.}
+  \label{fig:test}
+\end{figure}
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics{img/action}
+  \caption{Ação tomada após a geração de código.}
+  \label{fig:action}
+\end{figure}
+
+Os gráficos acima buscam correlacionar a sensação de aprendizado com a confiança técnica. A Figura \ref{fig:learning} revela uma divisão: enquanto 12 alunos sentem que o aprendizado é igual, 10 (quase 40\%) admitem que ele se torna superficial. Contudo, as Figuras \ref{fig:debugging} e \ref{fig:test} mostram uma alta autoconfiança: 17 alunos afirmam conseguir depurar sem a IA e 23 relatam confiança \enquote{Média} ou \enquote{Alta} para realizar provas sem consulta. A análise destes dados aponta para uma dissonância cognitiva potencial. A literatura, especificamente \citetitle{kosmynaYourBrainChatGPT2025}, fornece evidências neurocientíficas de que o uso de IA reduz a conectividade cerebral e gera \enquote{dívida cognitiva}. No entanto, os alunos da UFS demonstram alta confiança em suas habilidades manuais (Figuras \ref{fig:debugging} e \ref{fig:test}).
 
 Essa confiança pode ser interpretada de duas formas: (1) os alunos estão de fato utilizando a IA de forma complementar, lendo linha por linha (conforme evidenciado no arquivo action.pdf, onde 12 alunos relatam essa prática), ou (2) estamos diante do efeito Dunning-Kruger \parencite{jornal_usp_2023}, onde a facilidade de gerar código com a IA infla a percepção de competência do aluno, mascarando lacunas de conhecimento que só apareceriam em uma avaliação prática rigorosa.
 
-Ainda assim, o fato de 10 alunos reconhecerem explicitamente o aprendizado superficial valida a preocupação de \parencite{delikoura2025superficialoutputssuperficiallearning} sobre os riscos de saídas superficiais. Há uma consciência latente entre os discentes de que o atalho cognitivo pode ter custos a longo prazo.
+Ainda assim, o fato de 10 alunos reconhecerem explicitamente o aprendizado superficial valida a preocupação de \textcite{delikoura2025superficialoutputssuperficiallearning} sobre os riscos de saídas superficiais. Há uma consciência latente entre os discentes de que o atalho cognitivo pode ter custos a longo prazo.
 Respondendo à QP2, a percepção dos discentes é ambivalente. Embora mantenham altos níveis de confiança em sua autonomia e capacidade de resolução de problemas sem IA, uma parcela significativa reconhece a superficialidade no processo de aprendizagem assistido. Isso sugere que a dívida cognitiva é um fenômeno percebido, mas talvez subestimado pelos estudantes em relação às suas reais capacidades técnicas.
 
 \subsection{Análise da Pergunta de Pesquisa 3}
 
 A terceira pergunta (QP3) analisou: \enquote{Existe uma correlação direta entre o nível de complexidade dos problemas de programação propostos e a recorrência ao uso de ferramentas generativas pelos estudantes?}.
 
-[(step.pdf)] Figura 6 – Etapa do desenvolvimento de código onde a necessidade de IA é maior.
+\begin{figure}[ht]
+  \centering
+  \includegraphics{img/step}
+  \caption{Etapa do desenvolvimento de código onde a necessidade de IA é maior.}
+  \label{fig:step}
+\end{figure}
 
-A Figura 6 destaca de forma contundente o contexto de uso: 20 respondentes (77\%) indicam que a IA é necessária principalmente na \enquote{Correção de erros de sintaxe ou bugs (Depuração)}, enquanto apenas 5 a utilizam para a \enquote{Escrita da lógica inicial}. Este resultado refuta a ideia de que os alunos usam a IA apenas para gerar o código do zero para evitar o esforço lógico. A correlação identificada não é com a concepção do algoritmo, mas com a etapa de correção e manutenção. Os alunos parecem enfrentar o bloqueio não na lógica, mas na sintaxe e na identificação de erros.
+A Figura \ref{fig:step} destaca de forma contundente o contexto de uso: 20 respondentes (77\%) indicam que a IA é necessária principalmente na \enquote{Correção de erros de sintaxe ou bugs (Depuração)}, enquanto apenas 5 a utilizam para a \enquote{Escrita da lógica inicial}. Este resultado refuta a ideia de que os alunos usam a IA apenas para gerar o código do zero para evitar o esforço lógico. A correlação identificada não é com a concepção do algoritmo, mas com a etapa de correção e manutenção. Os alunos parecem enfrentar o bloqueio não na lógica, mas na sintaxe e na identificação de erros.
 
-Embora isso possa parecer um uso positivo (como um tutor), \parencite{leeImpactGenerativeAI2025} alertam que a redução do esforço cognitivo, mesmo na verificação, diminui o ceticismo e a atenção. Ao delegar o debugging para a IA, o aluno perde a oportunidade de aprender com o erro construtivo, essencial para a fixação de conceitos em linguagens de programação. A IA atua, portanto, como um redutor de frustração, mas possivelmente também como um redutor da resiliência intelectual necessária para a programação complexa.
-
+Embora isso possa parecer um uso positivo (como um tutor), \textcite{leeImpactGenerativeAI2025} alertam que a redução do esforço cognitivo, mesmo na verificação, diminui o ceticismo e a atenção. Ao delegar o debugging para a IA, o aluno perde a oportunidade de aprender com o erro construtivo, essencial para a fixação de conceitos em linguagens de programação. A IA atua, portanto, como um redutor de frustração, mas possivelmente também como um redutor da resiliência intelectual necessária para a programação complexa.
 
 \printbibliography[title={Referências}]
 
