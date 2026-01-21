@@ -12,6 +12,7 @@ import argparse
 import os
 
 from argparse import Namespace
+from textwrap import wrap
 from typing import Callable
 
 import altair as alt
@@ -87,7 +88,7 @@ def gen_pie_chart(question: Question, filename: str, dir: str = ".") -> None:
     current directory.
     """
 
-    base: Chart = alt.Chart(question.value, title=question.question).encode(
+    base: Chart = alt.Chart(question.value, title=wrap(question.question, 30)).encode(
         theta=alt.Theta(question.counts, stack=True)
     )
     pie = base.mark_arc(outerRadius=120).encode(
@@ -119,7 +120,7 @@ def gen_bar_chart(question: Question, filename: str, dir: str = ".") -> None:
     """
 
     total = question.value.select(pl.col(question.counts).sum()).item()
-    base: Chart = alt.Chart(question.value, title=question.question).encode(
+    base: Chart = alt.Chart(question.value, title=wrap(question.question)).encode(
         x=alt.X(question.counts, scale=alt.Scale(domain=[0, total])),
         y=alt.Y(
             question.answers,
@@ -127,14 +128,14 @@ def gen_bar_chart(question: Question, filename: str, dir: str = ".") -> None:
             axis=alt.Axis(title=None, labelLimit=400),
         ),
     )
-    pie = base.mark_bar().encode(
+    bar = base.mark_bar().encode(
         color=alt.Color(question.answers, legend=None),
     )
     text = base.mark_text(align="left", baseline="middle", dx=3).encode(
         text=alt.Text(question.counts),
         color=alt.value("black"),
     )
-    chart = pie + text
+    chart = bar + text
 
     os.makedirs(dir, exist_ok=True)
     chart.save(f"{dir}/{filename}.pdf")
