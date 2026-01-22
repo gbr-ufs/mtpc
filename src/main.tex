@@ -20,7 +20,10 @@ maxcitenames=2,
 style=ext-authoryear, % O estilo da SBC não funciona com o BibLaTeX.
 uniquename=init
 ]{biblatex}
-\DeclareOuterCiteDelims{parencite}{\bibopenbracket}{\bibclosebracket}
+\DeclareOuterCiteDelims{parencite}{\bibopenbracket}{\bibclosebracket} % [] para parencite.
+\setcounter{biburlnumpenalty}{80}
+\setcounter{biburlucpenalty}{80}
+\setcounter{biburllcpenalty}{80}
 \addbibresource{bibliografia.bib}
 % Informações.
 \title{Inteligência Artificial na Universidade Federal de Sergipe: Como o Seu Uso pode Comprometer o Aprendizado em Disciplinas Introdutórias de Programação}
@@ -38,7 +41,6 @@ uniquename=init
 \usepackage{hyperref}
 \makeatletter
 \hypersetup{
-  breaklinks=true,
   colorlinks=true,
   allcolors=black,
   pdftitle={\@title},
@@ -351,9 +353,9 @@ Apesar da consistência dos achados, o estudo apresenta certas ameaças à valid
 
 \begin{itemize}
     \item \textbf{Validade Externa:} O tamanho reduzido da amostra ($n=26$) e o foco geográfico em uma única instituição (UFS) limitam a generalização estatística dos resultados para outros contextos nacionais, diferindo de estudos com amostras mais amplas e diversificadas como o de \textcite{martin-gomezAIHigherEducation2025}.
-    
+
     \item \textbf{Validade de Conclusão:} Existe a possibilidade de viés de desejabilidade social, onde os alunos podem ter subestimado a frequência de uso ou superestimado sua confiança para não parecerem dependentes da tecnologia perante os pesquisadores, um fenômeno observado em estudos de auto-relato \parencite{leeImpactGenerativeAI2025}.
-    
+
     \item \textbf{Validade de Construção:} Os questionários baseiam-se na autopercepção (dados declaratórios). A dissonância entre a sensação de aprendizado e a confiança técnica sugere que métricas baseadas apenas na opinião do aluno podem não refletir com precisão a competência real, conforme demonstrado pelas discrepâncias neurais observadas por \textcite{kosmynaYourBrainChatGPT2025}, sendo necessária, em trabalhos futuros, a aplicação de testes práticos controlados.
 \end{itemize}
 
