@@ -88,13 +88,16 @@ def gen_pie_chart(question: Question, filename: str, dir: str = ".") -> None:
     current directory.
     """
 
-    base: Chart = alt.Chart(question.value, title=wrap(question.question, 30)).encode(
-        theta=alt.Theta(question.counts, stack=True)
-    )
+    base: Chart = alt.Chart(
+        question.value,
+        title=alt.Text(font="Times New Roman", text=wrap(question.question, 30)),
+    ).encode(theta=alt.Theta(question.counts, stack=True))
     pie = base.mark_arc(outerRadius=120).encode(
         color=alt.Color(
             question.answers,
-            legend=alt.Legend(labelLimit=500, title="Legenda", orient="right"),
+            legend=alt.Legend(
+                font="Times New Roman", labelLimit=500, title="Legenda", orient="right"
+            ),
         ),
         order=alt.Order(question.counts, sort="descending"),
     )
@@ -109,7 +112,7 @@ def gen_pie_chart(question: Question, filename: str, dir: str = ".") -> None:
     chart.save(f"{dir}/{filename}.pdf")
 
 
-def gen_bar_chart(question: Question, filename: str, dir: str = ".") -> None:
+def gen_bar_chart(question: Question, filename: str, font, dir: str = ".") -> None:
     """Generate a bar chart in PDF format of a question.
 
     Args:
@@ -120,18 +123,27 @@ def gen_bar_chart(question: Question, filename: str, dir: str = ".") -> None:
     """
 
     total = question.value.select(pl.col(question.counts).sum()).item()
-    base: Chart = alt.Chart(question.value, title=wrap(question.question)).encode(
-        x=alt.X(question.counts, scale=alt.Scale(domain=[0, total])),
+    base: Chart = alt.Chart(
+        question.value,
+        title=alt.Title(font=font, text=wrap(question.question)),
+    ).encode(
+        x=alt.X(
+            question.counts,
+            scale=alt.Scale(domain=[0, total]),
+            axis=alt.Axis(labelFont=font, titleFont=font),
+        ),
         y=alt.Y(
             question.answers,
             sort="-x",  # Descending order.
-            axis=alt.Axis(title=None, labelLimit=400),
+            axis=alt.Axis(title=None, labelFont=font, labelLimit=400, titleFont=font),
         ),
     )
     bar = base.mark_bar().encode(
         color=alt.Color(question.answers, legend=None),
     )
-    text = base.mark_text(align="left", baseline="middle", dx=3).encode(
+    text = base.mark_text(
+        align="left", baseline="middle", dx=3, font="Times New Roman"
+    ).encode(
         text=alt.Text(question.counts),
         color=alt.value("black"),
     )
@@ -209,7 +221,9 @@ def main() -> None:
         questions.append((Question(idx, current_df), name))
 
     for question in questions:
-        chart_types[args.chart_type](question[0], question[1], "build")
+        chart_types[args.chart_type](
+            question[0], question[1], "Times New Roman", "build"
+        )
         print(f"{parser.prog}: generated {args.chart_type} chart for {question[1]}")
 
 
