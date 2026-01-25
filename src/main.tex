@@ -9,6 +9,8 @@
 \makeatother
 \usepackage[english, brazilian]{babel} % Coisas de linguagem.
 \usepackage{graphicx} % Coisas gráficas.
+ % Pacote para tabelas mais elegantes (sem linhas verticais).
+\usepackage{booktabs}
 %% Citação.
 \usepackage{csquotes} % Aspas que se ajustam ao contexto automaticamente.
 \usepackage[
@@ -200,7 +202,23 @@ A presente investigação classifica-se como aplicada, de natureza exploratória
 
 Os objetivos específicos deste trabalho foram desdobrados em questões de pesquisa (QP) fundamentais para guiar a investigação. A primeira questão (QP1) busca identificar com que frequência e intensidade os alunos ingressantes utilizam ferramentas de IA Generativa para a resolução de atividades de programação. A segunda (QP2) investiga qual é a percepção dos discentes sobre os efeitos dessas ferramentas na capacidade cognitiva, especificamente na memória e no raciocínio lógico. Por fim, a terceira questão (QP3) examina se existe uma correlação direta entre o nível de complexidade dos problemas de programação propostos e a recorrência ao uso de ferramentas generativas pelos estudantes.
 
-Para a operacionalização da pesquisa, foram selecionados recursos com base na sua acessibilidade e capacidade de análise de dados. Como instrumentos de coleta, serão utilizados formulários eletrônicos (Google Forms) para a aplicação de questionários estruturados aos discentes. Para o processamento estatístico das respostas quantitativas e a identificação de padrões de uso, serão empregadas ferramentas de análise baseadas na linguagem Python com bibliotecas de dados. Além disso, a fundamentação teórica e a comparação com trabalhos relacionados serão realizadas através de consultas a bases de dados bibliográficas reconhecidas, como IEEE Xplore, ACM Digital Library e Google Scholar.
+Para a operacionalização da pesquisa, foram selecionados recursos com base na sua acessibilidade e capacidade de análise de dados. Como instrumentos de coleta, foram utilizados formulários eletrônicos (Google Forms) para a aplicação de questionários estruturados aos discentes. Para o processamento estatístico das respostas quantitativas e a identificação de padrões de uso, serão empregadas ferramentas de análise baseadas na linguagem Python com bibliotecas de dados. Além disso, a fundamentação teórica e a comparação com trabalhos relacionados serão realizadas através de consultas a bases de dados bibliográficas reconhecidas. A tabela a seguir detalha essas bases.
+
+\begin{table}[ht]
+  \centering
+  \begin{tabular}{c}
+    \toprule
+    Bases de Dados Bibliográficos \\
+    \midrule
+    ACM Digital Library \\
+    Arxiv \\
+    Google Scholar \\
+    IEEE Xplore \\
+    \bottomrule
+  \end{tabular}
+  \caption{Bases de Dados Bibliográficos}
+  \label{tab:bases-bibiliograficas}
+\end{table}
 
 Os procedimentos adotados dividem-se em quatro fases estratégicas. Inicialmente, realiza-se uma Revisão Sistemática da Literatura para levantar o estado da arte sobre LLMs na educação, focando em estudos recentes que abordam a \enquote{dívida cognitiva} e o \enquote{aprendizado superficial}. A fase seguinte consiste no desenvolvimento do instrumento, com a elaboração de um questionário validado para verificar as hipóteses de dependência tecnológica e redução da prática de debugging. Posteriormente, ocorre a coleta de dados mediante a aplicação do questionário aos alunos das disciplinas alvo ao final do semestre letivo, garantindo uma amostragem representativa dos ingressantes. Por fim, a etapa de análise e triangulação envolve o processamento dos dados quantitativos para responder às questões de pesquisa e a comparação qualitativa com as percepções recolhidas, validando se o cenário local reflete as tendências globais identificadas no referencial teórico.
 
