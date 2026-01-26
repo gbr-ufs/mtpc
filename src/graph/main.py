@@ -78,7 +78,7 @@ class Question:
         )
 
 
-def gen_pie_chart(question: Question, filename: str, dir: str = ".") -> None:
+def gen_pie_chart(question: Question, filename: str, font: str, dir: str = ".") -> None:
     """Generate a pie chart in PDF format of a question.
 
     Args:
@@ -90,13 +90,13 @@ def gen_pie_chart(question: Question, filename: str, dir: str = ".") -> None:
 
     base: Chart = alt.Chart(
         question.value,
-        title=alt.Text(font="Times New Roman", text=wrap(question.question, 30)),
+        title=alt.Text(font=font, text=wrap(question.question, 30)),
     ).encode(theta=alt.Theta(question.counts, stack=True))
     pie = base.mark_arc(outerRadius=120).encode(
         color=alt.Color(
             question.answers,
             legend=alt.Legend(
-                font="Times New Roman", labelLimit=500, title="Legenda", orient="right"
+                font=font, labelLimit=500, title="Legenda", orient="right"
             ),
         ),
         order=alt.Order(question.counts, sort="descending"),
@@ -112,7 +112,7 @@ def gen_pie_chart(question: Question, filename: str, dir: str = ".") -> None:
     chart.save(f"{dir}/{filename}.pdf")
 
 
-def gen_bar_chart(question: Question, filename: str, font, dir: str = ".") -> None:
+def gen_bar_chart(question: Question, filename: str, font: str, dir: str = ".") -> None:
     """Generate a bar chart in PDF format of a question.
 
     Args:
@@ -141,9 +141,7 @@ def gen_bar_chart(question: Question, filename: str, font, dir: str = ".") -> No
     bar = base.mark_bar().encode(
         color=alt.Color(question.answers, legend=None),
     )
-    text = base.mark_text(
-        align="left", baseline="middle", dx=3, font="Times New Roman"
-    ).encode(
+    text = base.mark_text(align="left", baseline="middle", dx=3, font=font).encode(
         text=alt.Text(question.counts),
         color=alt.value("black"),
     )
